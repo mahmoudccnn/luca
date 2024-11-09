@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image with Location Buttons</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .main-image {
+            width: 100%;
+            height: auto;
+            max-height: 40vh;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .buttons-container {
+            display: grid;
+            gap: 15px;
+            justify-items: center;
+        }
+
+        button {
+            width: 100%;
+            max-width: 200px;
+            height: 60px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Grid Layout */
+        @media (min-width: 480px) {
+            .buttons-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .buttons-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .buttons-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="kl.jfif" alt="Sample Image" class="main-image">
+        
+        <div class="buttons-container">
+            <!-- Location buttons with updated labels -->
+            <button onclick="openPage('pp1.html')" aria-label="الجيزه">الجيزه</button>
+            <button onclick="openPage('pp3.html')" aria-label="تجمع خامس">تجمع خامس</button>
+            <button onclick="openPage('pp2.html')" aria-label="فيصل">فيصل</button>
+            <button onclick="openPage('pp4.html')" aria-label="فيصل">فيصل</button> 
+    
+
+            <!-- Button to return to homepage -->
+            <button onclick="openPage('index.html')" aria-label="Return to homepage">رجوع إلى الصفحة الرئيسية</button>
+        </div>
+    </div>
+
+    <script>
+        function openPage(page) {
+            if (page === 'index.html') {
+                window.location.href = page;
+            } else {
+                window.open(page, "_blank");
+            }
+        }
+    </script>
+</body>
+</html>
